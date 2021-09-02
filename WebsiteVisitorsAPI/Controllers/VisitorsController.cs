@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebsiteVisitorsAPI.Models;
+using WebsiteVisitorsAPI.Repositories.Interfaces;
 
 namespace WebsiteVisitorsAPI.Controllers
 {
@@ -18,8 +20,8 @@ namespace WebsiteVisitorsAPI.Controllers
         [HttpGet]
         public IActionResult GetAllVisitors()
         {
-            
-            IEnumerable<Visitor> visitors = _repo.LoadAllVisitors();
+
+            IEnumerable<Visitor> visitors = _repo.GetAllVisitors();
             List<VisitorDTO> visitorsDTO = new List<VisitorDTO>();
             VisitorDTO visitorDTO;
 
