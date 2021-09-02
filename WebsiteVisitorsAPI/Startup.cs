@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebsiteVisitorsAPI.Models;
+using WebsiteVisitorsAPI.Models.Interfaces;
 using WebsiteVisitorsAPI.Repositories;
 using WebsiteVisitorsAPI.Repositories.Interfaces;
 
@@ -28,6 +30,8 @@ namespace WebsiteVisitorsAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddTransient<IDataAccess, MySqlDataAccess>();
+            services.AddAutoMapper(typeof(VisitorsMappings));
             services.AddTransient<IVisitorsRepository, VisitorsRepository>();
         }
 
