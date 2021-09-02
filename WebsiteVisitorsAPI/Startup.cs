@@ -33,6 +33,14 @@ namespace WebsiteVisitorsAPI
             services.AddTransient<IDataAccess, MySqlDataAccess>();
             services.AddAutoMapper(typeof(VisitorsMappings));
             services.AddTransient<IVisitorsRepository, VisitorsRepository>();
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("WebVisitApiSpec", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Title = "Website Visitors API",
+                    Version = "1"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +52,8 @@ namespace WebsiteVisitorsAPI
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSwagger();
 
             app.UseRouting();
 
