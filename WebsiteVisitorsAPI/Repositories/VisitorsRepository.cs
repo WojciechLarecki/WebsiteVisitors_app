@@ -7,7 +7,7 @@ using WebsiteVisitorsAPI.Models.Interfaces;
 
 namespace WebsiteVisitorsAPI.Repositories
 {
-    public class VisitorsRepository
+    public class VisitorsRepository : IVisitorsRepository
     {
         private readonly IDataAccess _dataAccess;
         public VisitorsRepository(IDataAccess dataAccess)
