@@ -17,6 +17,12 @@ namespace WebsiteVisitorsAPI.Controllers
         private readonly IVisitorsRepository _repo;
         private readonly IMapper mapper;
 
+        public VisitorsController(IVisitorsRepository repo, IMapper mapper)
+        {
+            _repo = repo;
+            this.mapper = mapper;
+        }
+
         [HttpGet]
         public IActionResult GetAllVisitors()
         {
