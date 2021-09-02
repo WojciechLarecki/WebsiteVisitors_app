@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebsiteVisitorsAPI.Models;
 using WebsiteVisitorsAPI.Models.Interfaces;
+using WebsiteVisitorsAPI.Repositories.Interfaces;
 
 namespace WebsiteVisitorsAPI.Repositories
 {
@@ -14,7 +15,7 @@ namespace WebsiteVisitorsAPI.Repositories
         {
             _dataAccess = dataAccess;
         }
-        public IEnumerable<Visitor> GetAllVisitors()
+        public IEnumerable<Visitor> SelectAllVisitors()
         {
             string sqlQuery = "SELECT * FROM visitors;";
             IEnumerable<Visitor> visitors = _dataAccess.LoadData<Visitor, dynamic>(sqlQuery, null);

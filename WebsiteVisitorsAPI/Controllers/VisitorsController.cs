@@ -21,7 +21,7 @@ namespace WebsiteVisitorsAPI.Controllers
         public IActionResult GetAllVisitors()
         {
             
-            IEnumerable<Visitor> visitors = _repo.GetAllVisitors();
+            IEnumerable<Visitor> visitors = _repo.SelectAllVisitors();
             List<VisitorDTO> visitorsDTO = new List<VisitorDTO>();
             VisitorDTO visitorDTO;
 

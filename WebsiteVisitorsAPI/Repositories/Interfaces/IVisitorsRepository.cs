@@ -6,7 +6,7 @@ namespace WebsiteVisitorsAPI.Repositories.Interfaces
 {
     public interface IVisitorsRepository
     {
-        IEnumerable<Visitor> GetAllVisitors();
+        IEnumerable<Visitor> SelectAllVisitors();
         void InsertVisitor(IVisitor visitor);
     }
 }
