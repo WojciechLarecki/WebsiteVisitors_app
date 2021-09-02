@@ -15,12 +15,12 @@ namespace WebsiteVisitorsAPI.Controllers
     public class VisitorsController : ControllerBase
     {
         private readonly IVisitorsRepository _repo;
-        private readonly IMapper mapper;
+        private readonly IMapper _mapper;
 
         public VisitorsController(IVisitorsRepository repo, IMapper mapper)
         {
             _repo = repo;
-            this.mapper = mapper;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -33,7 +33,7 @@ namespace WebsiteVisitorsAPI.Controllers
 
             foreach (var visitor in visitors)
             {
-                visitorDTO = mapper.Map<VisitorDTO>(visitor);
+                visitorDTO = _mapper.Map<VisitorDTO>(visitor);
                 visitorsDTO.Add(visitorDTO);
             }
 
