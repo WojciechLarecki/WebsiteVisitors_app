@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebsiteVisitorsAPI.Models.Interfaces
 {
-    interface IVisitor
+    public interface IVisitor
     {
         public string Name { get; set; }
         public string LastName { get; set; }
