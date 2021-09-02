@@ -41,11 +41,6 @@ namespace WebsiteVisitorsAPI.Controllers
             {
                 result = BadRequest();
             }
-            else if (_repo.VisitorExist(visitorDTO))
-            {
-                ModelState.AddModelError("", "Visitor already exists");
-                result = StatusCode(StatusCodes.Status406NotAcceptable, ModelState);
-            }
             else
             {
                 _repo.InsertVisitor();
