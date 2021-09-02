@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebsiteVisitorsAPI.Models.Interfaces
 {
-    interface IDataAccess
+    public interface IDataAccess
     {
         IEnumerable<T> LoadData<T, U>(string sqlQuery, U parameters);
         void SaveData<T>(string sqlQuery, T parameters);
