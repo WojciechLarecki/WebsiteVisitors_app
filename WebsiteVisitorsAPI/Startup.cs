@@ -55,6 +55,12 @@ namespace WebsiteVisitorsAPI
 
             app.UseSwagger();
 
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("swagger/WebVisitApiSpec/swagger.json", "Website Visitors API");
+                options.RoutePrefix = "";
+            });
+
             app.UseRouting();
 
             app.UseAuthorization();
