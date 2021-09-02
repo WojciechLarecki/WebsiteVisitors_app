@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebsiteVisitorsAPI</name>
+    </assembly>
+    <members>
+        <member name="M:WebsiteVisitorsAPI.Controllers.VisitorsController.GetAllVisitors">
+            <summary>
+            Returns all website visitors.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebsiteVisitorsAPI.Controllers.VisitorsController.PostVisitor(WebsiteVisitorsAPI.Models.VisitorDTO)">
+            <summary>
+            Inserts visitor into database.
+            </summary>
+            <param name="visitorDTO">Visitor parameters</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

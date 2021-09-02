@@ -8,7 +8,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using WebsiteVisitorsAPI.Models;
 using WebsiteVisitorsAPI.Models.Interfaces;
@@ -40,6 +42,9 @@ namespace WebsiteVisitorsAPI
                     Title = "Website Visitors API",
                     Version = "1"
                 });
+                var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlCommentsFilePath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
+                options.IncludeXmlComments(xmlCommentsFilePath);
             });
         }
 

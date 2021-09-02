@@ -23,6 +23,10 @@ namespace WebsiteVisitorsAPI.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Returns all website visitors.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<VisitorDTO>))]
         public IActionResult GetAllVisitors()
@@ -41,6 +45,11 @@ namespace WebsiteVisitorsAPI.Controllers
             return Ok(visitorsDTO);
         }
 
+        /// <summary>
+        /// Inserts visitor into database.
+        /// </summary>
+        /// <param name="visitorDTO">Visitor parameters</param>
+        /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<VisitorDTO>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
