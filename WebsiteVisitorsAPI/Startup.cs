@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebsiteVisitorsAPI.Repositories;
+using WebsiteVisitorsAPI.Repositories.Interfaces;
 
 namespace WebsiteVisitorsAPI
 {
@@ -25,8 +27,8 @@ namespace WebsiteVisitorsAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
+            services.AddTransient<IVisitorsRepository, VisitorsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
