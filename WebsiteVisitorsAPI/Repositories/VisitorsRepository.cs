@@ -17,7 +17,7 @@ namespace WebsiteVisitorsAPI.Repositories
         public IEnumerable<Visitor> GetAllVisitors()
         {
             string sqlQuery = "SELECT * FROM visitors;";
-            IEnumerable<Visitor> visitors = _dataAccess.LoadData<Visitor>(sqlQuery);
+            IEnumerable<Visitor> visitors = _dataAccess.LoadData<Visitor, dynamic>(sqlQuery, null);
 
             return visitors;
         }
