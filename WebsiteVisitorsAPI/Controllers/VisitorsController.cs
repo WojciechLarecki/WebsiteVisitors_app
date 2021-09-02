@@ -20,7 +20,7 @@ namespace WebsiteVisitorsAPI.Controllers
         [HttpGet]
         public IActionResult GetAllVisitors()
         {
-
+            
             IEnumerable<Visitor> visitors = _repo.GetAllVisitors();
             List<VisitorDTO> visitorsDTO = new List<VisitorDTO>();
             VisitorDTO visitorDTO;
@@ -45,7 +45,7 @@ namespace WebsiteVisitorsAPI.Controllers
             }
             else
             {
-                _repo.InsertVisitor();
+                _repo.InsertVisitor(visitorDTO);
                 result = Ok();
             }
 
