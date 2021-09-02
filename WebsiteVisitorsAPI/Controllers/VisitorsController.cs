@@ -24,6 +24,7 @@ namespace WebsiteVisitorsAPI.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<VisitorDTO>))]
         public IActionResult GetAllVisitors()
         {
             
@@ -41,6 +42,8 @@ namespace WebsiteVisitorsAPI.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<VisitorDTO>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult PostVisitor([FromBody]VisitorDTO visitorDTO)
         {
             IActionResult result;
