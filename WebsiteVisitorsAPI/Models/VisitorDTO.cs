@@ -18,5 +18,7 @@ namespace WebsiteVisitorsAPI.Models
         [Required]
         [StringLength(20)]
         public string City { get; set; }
+
+        public DateTime VisitTime { get; set; }
     }
 }

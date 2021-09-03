@@ -10,5 +10,6 @@ namespace WebsiteVisitorsAPI.Models.Interfaces
         public string Name { get; set; }
         public string LastName { get; set; }
         public string City { get; set; }
+        public DateTime VisitTime { get; set; }
     }
 }
